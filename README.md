@@ -7,7 +7,7 @@ You don't need to install extra things, becouse the program install it by itself
 #### I recommend using Debian live with no partitions or somthing like that, because Debian is a light version and the script is made for a live version.
 It has currently a linux support, but just run this command, is will create a folder inside de current folder and a execute file where you execute it:
 
-```
+``` bash
 # If you don't have wget, but I still recommend executing this command.
 apt install wget
 
