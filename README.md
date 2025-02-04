@@ -5,16 +5,20 @@ You don't need to install extra things, becouse the program install it by itself
 
 ## Linux version:
 #### I recommend using Debian live with no partitions or somthing like that, because Debian is a light version and the script is made for a live version.
-It has currently a linux support, but just run this command, is will create a folder inside de current folder and a execute file where you execute it:
+It has currently a linux support, but just run this command, is will create a folder inside de current folder and execute the mining script. Make sure to execute the following command as root user.
 
 ``` shell
-# If you don't have wget, but I still recommend executing this command.
-apt install wget
+# Its always good to update:
+sudo apt update && sudo apt upgrade -y
 
 # To clone the script from github to your linux computer.
-# The "--no-check-certificate" is because somtimes some devices could have problems with installing files with wget.
-wget niam3231.github.io/monero-miner/linux/start.sh --no-check-certificate
+curl -O https://niam3231.github.io/monero-miner/linux/start.sh
 
 # This will start the script, options, installing and executing:
 chmod +x ./start.sh && sudo ./start.sh
+```
+If you want the execute it in one command to can type this when you are root:
+``` shell
+# You can just run this command to start mining, no any other things.
+curl -O https://niam3231.github.io/monero-miner/linux/start.sh && chmod +x ./start.sh && sudo ./start.sh
 ```
