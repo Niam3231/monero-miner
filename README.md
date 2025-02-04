@@ -3,7 +3,7 @@ This is just one of the easiest ways to mine monero for linux, just execute the 
 
 ## Linux version:
 #### I recommend using Debian live with no partitions or somthing like that, because Debian is a light version and the script is made for a live version.
-It has currently a linux support, but just run this command, is will create a folder inside de current folder and execute the mining script. Make sure to execute the following command as root user.
+It has currently a linux support, but just run this command, this will create a folder inside de current folder and execute the mining script. Make sure to execute the following command as root user.
 
 ``` shell
 # Its always good to update:
