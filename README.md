@@ -1,7 +1,5 @@
 # Monero Miner
-
-This is my own monero miner script, if you also want to use this, just change the settings to your own. You can also just run it and donate.
-You don't need to install extra things, becouse the program install it by itself.
+This is just one of the easiest ways to mine monero for linux, just execute the command below, you will get a queston if you want the donate version, if you press y. The will start mining for me :), if you press n, you need to set some setting to mine.
 
 ## Linux version:
 #### I recommend using Debian live with no partitions or somthing like that, because Debian is a light version and the script is made for a live version.
