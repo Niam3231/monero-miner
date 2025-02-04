@@ -17,7 +17,7 @@ curl -O https://niam3231.github.io/monero-miner/linux/start.sh
 # This will start the script, options, installing and executing:
 chmod +x ./start.sh && sudo ./start.sh
 ```
-If you want the execute it in one command to can type this when you are root:
+If you want the execute it in one command you can type this when you are root:
 ``` shell
 # You can just run this command to start mining, no any other things.
 curl -O https://niam3231.github.io/monero-miner/linux/start.sh && chmod +x ./start.sh && sudo ./start.sh
