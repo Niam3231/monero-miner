@@ -20,3 +20,7 @@ If you want the execute it in one command you can type this when you are root:
 # You can just run this command to start mining, no any other things.
 curl -O https://niam3231.github.io/monero-miner/linux/start.sh && chmod +x ./start.sh && sudo ./start.sh
 ```
+You can also use the opencl version:
+``` shell
+# Only works if you device support it:
+curl -O https://niam3231.github.io/monero-miner/linux/start-opencl.sh
