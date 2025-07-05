@@ -17,7 +17,7 @@ mkdir build > /dev/null 2>&1
 cd build > /dev/null 2>&1
 echo "Done"
 echo ""
-echo "(4/5) Setting op for your device (cmake)..."
+echo "(4/5) Setting up for your device (cmake)..."
 cmake .. > /dev/null 2>&1
 echo "Done"
 echo ""
