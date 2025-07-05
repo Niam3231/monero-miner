@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 echo "Press any key to continue..."
 read
 echo ""
