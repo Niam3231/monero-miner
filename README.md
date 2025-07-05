@@ -7,7 +7,7 @@ The auto version works only for Linux, it checks if your system is compatible an
 To install, run these commands:
 ``` shell
 # To clone the script from github to your linux computer.
-curl -O https://niam3231.github.io/monero-miner/linux/auto.sh
+curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/auto.sh
 
 # This will start the script, install XMRig for you hardware:
 chmod +x ./auto.sh && sudo ./auto.sh
@@ -22,7 +22,7 @@ It has currently a Linux support, but just run this command, this will create a 
 sudo apt update
 
 # To clone the script from github to your linux computer.
-curl -O https://niam3231.github.io/monero-miner/linux/start.sh
+curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/start.sh
 
 # This will start the script, options, installing and executing:
 chmod +x ./start.sh && sudo ./start.sh
@@ -35,7 +35,7 @@ _Note: This is in highly beta and will likely not work or output many errors if 
 sudo apt update
 
 # To clone the script from github to your linux computer.
-curl -O https://niam3231.github.io/monero-miner/linux/start-opencl.sh
+curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/start-opencl.sh
 
 # This will start the script, options, installing and executing:
 chmod +x ./start-opencl.sh && sudo ./start-opencl.sh
@@ -49,7 +49,7 @@ _Note: It's likely not profitable because of the hardware._
 sudo apt update
 
 # To clone the script from github to your linux computer.
-curl -O https://niam3231.github.io/monero-miner/linux/start-arm.sh
+curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/start-arm.sh
 
 # This will start the script, options, installing and executing:
 chmod +x ./start-arm.sh && sudo ./start-arm.sh
@@ -69,6 +69,6 @@ Now inside Ubuntu, run these commands.
 apt update
 apt install sudo -y
 sudo apt install curl -y
-curl -O https://niam3231.github.io/monero-miner/linux/start-arm.sh
+curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/start-arm.sh
 chmod +x ./start-arm.sh && sudo ./start-arm.sh
 ```
