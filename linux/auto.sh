@@ -12,6 +12,9 @@ if [ "$bit" = "64-BIT" ] && [ "$termux" = "true" ]; then
   if [[ "$answer" =~ ^[Yy]$ ]]; then
     echo ""
 	echo "Copy the following:"
+	echo "apt update"
+	echo "apt install sudo -y"
+	echo "sudo apt install curl -y"
     echo "curl -O https://niam3231.github.io/monero-miner/linux/start-arm.sh"
     echo "chmod +x ./start-arm.sh && sudo ./start-arm.sh"
 	echo ""

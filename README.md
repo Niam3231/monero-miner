@@ -66,9 +66,9 @@ proot-distro login ubuntu
 ```
 Now inside Ubuntu, run these commands.
 ``` shell
-# To clone the script from github to your linux computer.
+apt update
+apt install sudo -y
+sudo apt install curl -y
 curl -O https://niam3231.github.io/monero-miner/linux/start-arm.sh
-
-# This will start the script, options, installing and executing:
 chmod +x ./start-arm.sh && sudo ./start-arm.sh
 ```
