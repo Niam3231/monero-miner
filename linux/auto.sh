@@ -14,7 +14,7 @@ if [ "$bit" = "64-BIT" ] && [ "$termux" = "true" ]; then
 	echo "apt update"
 	echo "apt install sudo -y"
 	echo "sudo apt install curl -y"
-    echo "curl -O https://niam3231.github.io/monero-miner/linux/start-arm.sh"
+    echo "curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/start-arm.sh"
     echo "chmod +x ./start-arm.sh && sudo ./start-arm.sh"
 	echo ""
 	echo "Press any key if you copied the text."
