@@ -10,7 +10,7 @@ To install, run these commands:
 curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/auto.sh
 
 # This will start the script, install XMRig for you hardware:
-chmod +x ./auto.sh && sudo ./auto.sh
+chmod +x ./auto.sh && ./auto.sh
 ```
 
 ## Linux version:
