@@ -2,7 +2,6 @@
 arch=$(uname -m | awk '{if($0 ~ /arm|aarch/){print "ARM"} else if($0 ~ /x86_64|amd64/){print "AMD"} else{print "OTHER"}}')
 bit=$(uname -m | awk '{if($0 ~ /64/) print "64-BIT"; else if($0 ~ /86/) print "32-BIT"; else print "OTHER"}')
 termux=$([ "$PREFIX" = "/data/data/com.termux/files/usr" ] && echo "true" || echo "false")
-
 if [ "$bit" = "64-BIT" ] && [ "$termux" = "true" ]; then
   echo ""
   echo "Your device is compatible. But Termux is not supported by XMRig."
