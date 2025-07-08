@@ -37,7 +37,7 @@ elif [ "$arch" = "ARM" ] && [ "$bit" = "64-BIT" ] && [ "$termux" = "false" ]; th
   echo ""
   read -p "Do you want to install XMRig? (y/n): " answer
   if [[ "$answer" =~ ^[Yy]$ ]]; then
-    curl -O https://niam3231.github.io/monero-miner/linux/start-arm.sh
+    curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/start-arm.sh
     chmod +x ./start-arm.sh && sudo ./start-arm.sh
   else
     echo "XMRig will NOT be installed on your device."
@@ -53,7 +53,7 @@ elif [ "$arch" = "AMD" ] && [ "$bit" = "64-BIT" ] && [ "$termux" = "false" ]; th
   if [[ "$answer" =~ ^[Yy]$ ]]; then
     sudo apt update
 	sudo apt install curl -y
-	curl -O https://niam3231.github.io/monero-miner/linux/start.sh
+	curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/start.sh
 	chmod +x ./start.sh && sudo ./start.sh
   else
     echo "XMRig will NOT be installed on your device."
