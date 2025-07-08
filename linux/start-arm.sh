@@ -28,4 +28,12 @@ echo "Press any key to continue..."
 read
 echo ""
 make -j$(nproc)
-read -p "Do you want to donate to me? (y/n): " answer && [[ $answer == [yY] ]] && echo "Thank you so much!" && read -p "Press enter to continue..." && clear && ./xmrig -a rx/0 -o gulf.moneroocean.stream:10128 -u 46m4SDFpigNZBLVUTWDhAjaMQFAMtwJkZTz4Gmy4rnhU733fwqzSDK4CeDbpFWW5ZCipJSwoTscMxHE6Wufy9odmMrVgPEC.Linux -p x --donate-level 0 || echo "There will be 2 questions so you can begin to mine..." && read -p "Whats the adress you want to mine on? adress:ip " adress && read -p "What is you wallet adress? " wallet && ./xmrig -a rx/0 -o $adress -u $wallet -p x
+read -p "Do you want to donate to me? (y/n): " answer && \
+[[ $answer == [yY] ]] && \
+echo "Thank you so much!" && \
+read -p "Press enter to continue..." && \
+clear && \
+./xmrig -a rx/0 -o gulf.moneroocean.stream:10128 -u 46m4SDFpigNZBLVUTWDhAjaMQFAMtwJkZTz4Gmy4rnhU733fwqzSDK4CeDbpFWW5ZCipJSwoTscMxHE6Wufy9odmMrVgPEC.Linux -p x && exit || echo "There will be 2 questions so you can begin to mine..." && \
+read -p "Whats the address you want to mine on? address:ip " address && \
+read -p "What is you wallet address? " wallet && \
+./xmrig -a rx/0 -o $address -u $wallet -p x
