@@ -25,6 +25,14 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/Niam3231/monero-miner/r
 ```
 4. Now you will get instructions what to do further.
 
+To begin with again with mining:
+1. Press WIN+R
+2. Type CMD and press enter.
+3. Paste the following:
+``` batch
+wsl cd; curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/auto.sh; chmod +x ./auto.sh; ./auto.sh
+```
+
 ## Linux version:
 I recommend using Debian live with no partitions or something like that, because Debian is a light version and the script is made for a live version.
 It has currently a Linux support, but just run this command, this will create a folder inside the current folder and execute the mining script. Make sure to execute the following command as root user. This is made for AMD devices such as desktops or laptops.
