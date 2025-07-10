@@ -17,7 +17,11 @@ chmod +x ./auto.sh && ./auto.sh
 2. Then type PowerShell and press CTRL+SHIFT+ENTER to run it as admin.
 3. Paste the following:
 ``` powershell
-cd $env:UserProfile && mkdir monero-installer && cd monero-installer && Invoke-WebRequest -Uri https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/windows/start.ps1 -OutFile start.ps1 && ./start.ps1
+cd $env:UserProfile
+mkdir monero-installer
+cd monero-installer
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/windows/start.ps1 -OutFile start.ps1
+./start.ps1
 ```
 4. Now you will get instructions what to do further.
 
