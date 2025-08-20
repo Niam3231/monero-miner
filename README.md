@@ -92,3 +92,17 @@ sudo apt install curl -y
 curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/start-arm.sh
 chmod +x ./start-arm.sh && sudo ./start-arm.sh
 ```
+## Troubleshooting
+If you have get this error from curl:
+``` bash
+curl: (6) Could not resolve host: raw.githubusercontent.com
+```
+There went probably something wrong with DNS, this often happens when you use cloud services. You can fix it by changing the DNS settings to 8.8.8.8 and as secondary 1.1.1.1. Those are from Google and Cloudflare.
+``` shell
+echo -e "nameserver 8.8.8.8\nnameserver 1.1.1.1" | sudo tee /etc/resolv.conf > /dev/null
+```
+If you don't want to use root:
+``` shell
+mkdir -p ~/.config/dns && echo -e "nameserver 8.8.8.8\nnameserver 1.1.1.1" > ~/.config/dns/resolv.conf && export RESOLV_CONF=$HOME/.config/dns/resolv.conf
+```
+On Windows, Android or any other distributions you can use the GUI.
