@@ -35,7 +35,7 @@ wsl cd; curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/hea
 
 ## Linux version:
 I recommend using Debian live with no partitions or something like that, because Debian is a light version and the script is made for a live version.
-Just run this command, this will create a folder inside the current folder and execute the mining script. Make sure to execute the following command as root user. This is made for AMD devices such as desktops or laptops.
+Just run this command, this will create a folder inside the current folder and execute the mining script. Make sure to execute the following command as root user. This is made for x86_64 devices such as desktops or laptops.
 
 ``` shell
 # Its always good to update:
@@ -78,6 +78,7 @@ chmod +x ./start-arm.sh && sudo ./start-arm.sh
 If you have an android phone, you can clone this script to start mining on android.
 
 _Note: You will need to have at least 3GB free, it will install a proot-distro. Also, it's likely not profitable because of the hardware._
+
 First, install proot to gain (fake) root access and correct libraries.
 ``` shell
 pkg install proot-distro
