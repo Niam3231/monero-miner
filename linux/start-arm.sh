@@ -31,7 +31,7 @@ if $use_precompiled; then
   echo ""
   echo "(1/3) Installing required packages..."
   sudo apt update >/dev/null 2>&1 || true
-  sudo apt install -y zip unzip curl >/dev/null 2>&1 || {
+  sudo apt install -y zip unzip curl libuv1-dev libssl-dev libhwloc-dev >/dev/null 2>&1 || {
     echo "Failed to install required packages. Aborting precompiled path."
     use_precompiled=false
   }
@@ -136,5 +136,6 @@ else
   read -r -p "What is your wallet address? : " wallet
 fi
 
+clear
 echo "Starting compiled xmrig..."
 exec "$BUILT_BIN" -a rx/0 -o "$pool" -u "$wallet" -p x
