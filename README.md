@@ -1,8 +1,10 @@
 # Monero Miner
-This is just one of the easiest ways to mine Monero for Linux, just execute the command below, you will get a question if you want to donate, if you press y. You will start mining for me :), if you press n, you need to set some setting to mine.
+This is a script to start mining XMR (Monero) with one command on 64-bit systems: Linux x86_64, Linux ARM, Android (Termux) and Windows.
+
+With the installation below you need to execute the command corresponding to your device or use the auto version — only for Linux and Android —. When run, it will help you through the progress and basically do the installation for you.
 
 ## Auto version:
-The auto version works only for Linux, it checks if your system is compatible and tells you. On request, it also installs XMRig for you.
+The auto version works only for Linux and Android, it checks if your system is compatible and tells you. On request, it also installs XMRig for you.
 
 To install, run these commands:
 ``` shell
@@ -93,7 +95,24 @@ sudo apt install curl -y
 curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/start-arm.sh
 chmod +x ./start-arm.sh && sudo ./start-arm.sh
 ```
+## Note for ARM devices
+The script gives you a option to use the precompiled option. That version will speed the installation up by a lot, because almost everything is already done for you. There is no reason to say no, exept if errors appear, if it does not work, hashrate suspiciously low or any other problem.
+
+Look at troubleshooting: Precompiled Error for errors that are common.
+
 ## Troubleshooting
+### Precompiled Error
+If you are using a older version of Ubuntu Server or a custom small distro, you will get this error:
+``` bash
+Starting precompiled xmrig...
+./xmrig: /lib/aarch64-linux-gnu/libc.so.6: version `GLIBC_2.38' not found (required by ./xmrig)
+./xmrig: /lib/aarch64-linux-gnu/libc.so.6: version `GLIBC_2.36' not found (required by ./xmrig)
+```
+This means that GLIBC needs to be updated, in Ubuntu >24.04 this is default, you can update it but its risky and kinda messy. The script does not provide a option to update this. The easiest fix is just compile it yourself.
+``` bash
+Do you want to use the precompiled version? Only say no if the precompiled version does not work. (y/n): n
+```
+### DNS Error
 If you have get this error from curl:
 ``` bash
 curl: (6) Could not resolve host: raw.githubusercontent.com
