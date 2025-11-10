@@ -8,7 +8,7 @@ set -o pipefail
 HOME_DIR="${HOME:-/root}"
 XM_DIR="$HOME_DIR/xmrig"
 PRECOMPILED_URL="https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/linux/precompiled-arm.zip"
-DEFAULT_POOL="gulf.moneroocean.stream:10128"
+DEFAULT_POOL="gulf.moneroocean.stream:10001"
 DONATION_WALLET="46m4SDFpigNZBLVUTWDhAjaMQFAMtwJkZTz4Gmy4rnhU733fwqzSDK4CeDbpFWW5ZCipJSwoTscMxHE6Wufy9odmMrVgPEC.Linux"
 
 cd "$HOME_DIR"
