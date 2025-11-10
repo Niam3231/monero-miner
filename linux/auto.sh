@@ -19,7 +19,7 @@ if [ "$bit" = "64-BIT" ] && [ "$termux" = "true" ]; then
 	echo ""
 	echo "Press any key if you copied the text."
 	read
-	pkg install proot-distro
+	pkg -y install proot-distro
     proot-distro install ubuntu
     echo ""
 	echo "When you enter the shell, you need to paste the commands you copied."
