@@ -98,49 +98,19 @@ if ! $reuse_existing; then
   echo ""
   echo "(5/7) Enabling MSR support..."
 
-  # Install kmod if modprobe is missing
-  if ! command -v modprobe >/dev/null 2>&1; then
-    echo "modprobe not found. Installing kmod..."
+  set +e
 
-    sudo apt install -y kmod >/dev/null 2>&1 || {
-      echo "Failed to install kmod. Continuing without MSR support..."
-    }
-  fi
+  sudo apt install -y kmod linux-cpupower >/dev/null 2>&1
 
-  # Try loading msr module
-  if command -v modprobe >/dev/null 2>&1; then
-    if sudo modprobe msr >/dev/null 2>&1; then
-      echo "MSR module loaded successfully."
+  sudo modprobe msr >/dev/null 2>&1
+  sudo chmod o+w /dev/cpu/*/msr >/dev/null 2>&1
 
-      # Try enabling access permissions
-      sudo chmod o+w /dev/cpu/*/msr 2>/dev/null || true
-
-      # Verify MSR device exists
-      if ls /dev/cpu/*/msr >/dev/null 2>&1; then
-        echo "MSR devices detected."
-      else
-        echo "MSR module loaded, but no MSR devices found."
-      fi
-    else
-      echo "Could not load MSR module. Continuing anyway..."
-    fi
-  else
-    echo "modprobe still unavailable. Skipping MSR setup."
-  fi
   echo ""
   echo "(6/7) Setting up performance mode..."
 
-  sudo apt install linux-cpupower -y >/dev/null 2>&1 || true
+  sudo cpupower frequency-set -g performance >/dev/null 2>&1
 
-  if sudo cpupower frequency-set -g performance >/dev/null 2>&1; then
-    echo "Performance governor enabled."
-
-    if ls /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null 2>&1; then
-      sudo cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
-    fi
-  else
-    echo "Could not enable performance mode. Continuing anyway..."
-  fi
+  set -e
 
   echo ""
   echo "(7/7) Compiling xmrig (this may take a while)..."
