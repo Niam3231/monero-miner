@@ -3,6 +3,22 @@ This is a script to start mining XMR (Monero) with one command on 64-bit systems
 
 With the installation below you need to execute the command corresponding to your device or use the auto version — only for Linux and Android —. When run, it will help you through the progress and basically do the installation for you.
 
+## Compile Version
+The version that termux uses but without the whole termux thing. It compiles it for you, enables MSR and uses performace for all your cores. **This works only on linux!**
+
+It does not care about your device, 32-bit aarch64, no problem. Allowing you to have full control and even more hashrate.
+
+``` shell
+# Its always good to update:
+sudo apt update
+
+# To clone the script from github to your linux computer.
+curl -O https://raw.githubusercontent.com/Niam3231/monero-miner/refs/heads/main/xmrig-compiler.sh
+
+# This will start the script, options, installing and executing:
+chmod +x ./xmrig-compiler.sh && sudo ./xmrig-compiler.sh
+```
+
 ## Auto version:
 The auto version works only for Linux and Android, it checks if your system is compatible and tells you. On request, it also installs XMRig for you.
 
