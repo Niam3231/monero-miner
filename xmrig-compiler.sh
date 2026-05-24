@@ -117,7 +117,7 @@ if ! $reuse_existing; then
 
   read -r -p "Press enter to continue..."
 
-  make -j"$(nproc)" || {
+  make -j"$(( ($(nproc) * 3) / 4 > 0 ? ($(nproc) * 3) / 4 : 1 ))" || {
     echo "Compilation failed."
     exit 1
   }
