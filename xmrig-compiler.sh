@@ -136,7 +136,7 @@ if ! $reuse_existing; then
     echo "Performance governor enabled."
 
     if ls /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null 2>&1; then
-      cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+      sudo cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
     fi
   else
     echo "Could not enable performance mode. Continuing anyway..."
