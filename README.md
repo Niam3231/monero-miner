@@ -19,6 +19,7 @@ chmod +x ./xmrig-compiler.sh && sudo ./xmrig-compiler.sh
 | OS                 | Architecture | Word size | Status    |
 | ------------------ | ------------ | --------- | --------- |
 | Linux              | x86_64       | 64-bit    | Confirmed |
+| Linux              | x86_64       | 32-bit    | Confirmed |
 | Linux              | aarch64      | 64-bit    | Pending   |
 | Android (UserLand) | aarch64      | 64-bit    | Confirmed |
 | Android (Termux)   | aarch64      | 64-bit    | Pending   |
