@@ -82,18 +82,24 @@ if ! $reuse_existing; then
   cd "$SRC_DIR"
 
   echo ""
-  echo "(4/7) Configuring build..."
+  echo "(4/7) Configuring build with native CPU optimizations..."
 
   mkdir -p build
   cd build
 
-  cmake .. >/dev/null 2>&1 || {
+  # Inject architecture-native instructions (-march=native) and max optimization (-O3)
+  export CFLAGS="-O3 -march=native"
+  export CXXFLAGS="-O3 -march=native"
+
+  cmake .. \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DWITH_HWLOC=ON >/dev/null 2>&1 || {
     echo "CMake configuration failed."
     exit 1
   }
 
   echo ""
-  echo "Build completed successfully."
+  echo "Build configuration completed successfully."
 
   echo ""
   echo "(5/7) Enabling MSR support..."
@@ -113,7 +119,7 @@ if ! $reuse_existing; then
   set -e
 
   echo ""
-  echo "(7/7) Compiling xmrig (this may take a while)..."
+  echo "(7/7) Compiling xmrig (native optimized, 75% core cap)..."
 
   read -r -p "Press enter to continue..."
 
@@ -123,7 +129,6 @@ if ! $reuse_existing; then
   }
 
 fi
-
 # ============================================
 # Verify binary exists
 # ============================================
