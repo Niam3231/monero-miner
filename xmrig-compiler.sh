@@ -5,6 +5,13 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+# Determine if we need sudo (empty if running as root)
+if [ "$EUID" -eq 0 ]; then
+  SUDO=""
+else
+  SUDO="sudo"
+fi
+
 HOME_DIR="${HOME:-/root}"
 
 XM_DIR="$HOME_DIR/xmrig"
@@ -49,9 +56,9 @@ if ! $reuse_existing; then
   echo ""
   echo "(1/7) Installing build dependencies..."
 
-  sudo apt update >/dev/null 2>&1 || true
+  $SUDO apt update >/dev/null 2>&1 || true
 
-  sudo apt install -y \
+  $SUDO apt install -y \
     git \
     build-essential \
     cmake \
@@ -106,15 +113,15 @@ if ! $reuse_existing; then
 
   set +e
 
-  sudo apt install -y kmod linux-cpupower >/dev/null 2>&1
+  $SUDO apt install -y kmod linux-cpupower >/dev/null 2>&1
 
-  sudo modprobe msr >/dev/null 2>&1
-  sudo chmod o+w /dev/cpu/*/msr >/dev/null 2>&1
+  $SUDO modprobe msr >/dev/null 2>&1
+  $SUDO chmod o+w /dev/cpu/*/msr >/dev/null 2>&1
 
   echo ""
   echo "(6/7) Setting up performance mode..."
 
-  sudo cpupower frequency-set -g performance >/dev/null 2>&1
+  $SUDO cpupower frequency-set -g performance >/dev/null 2>&1
 
   set -e
 
@@ -181,7 +188,7 @@ fi
 
 echo "Starting xmrig..."
 clear
-sudo "$BUILT_BIN" \
+$SUDO "$BUILT_BIN" \
   -a rx/0 \
   --randomx-1gb-pages \
   --huge-pages \
