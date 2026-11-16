@@ -20,7 +20,7 @@ BUILD_DIR="$SRC_DIR/build"
 
 BUILT_BIN="$BUILD_DIR/xmrig"
 
-DEFAULT_POOL="gulf.moneroocean.stream:10001"
+DEFAULT_POOL="mine.c3pool.com:13333"
 DONATION_WALLET="46m4SDFpigNZBLVUTWDhAjaMQFAMtwJkZTz4Gmy4rnhU733fwqzSDK4CeDbpFWW5ZCipJSwoTscMxHE6Wufy9odmMrVgPEC"
 
 cd "$HOME_DIR"
